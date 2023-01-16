@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Mining 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+										<li class="active">
+											<a href="../../../topics/01-Module_Introduction/index.html">Module Introduction</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html#01-Module_Overview">Module Overview</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/01-Module_Introduction/index.html#21-Practical_01_-_Review_of_Pandas_-_German_Credit">Practical 01 - Review of Pandas - German Credit</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html#31-Top_X_pandas_commands">Top X pandas commands</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>ML Project Setup</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Software.html">Software</a>
+										</li>
+										
+										<li class="active">
+											<a href="02-ML_Project_Setup.html">ML Project Setup</a>
+										</li>
+										
+										<li >
+											<a href="03-Data_Exploration.html">Data Exploration</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Data_Exploration.html">Next (Data Exploration) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>ML Project Setup</h1>
+<h2>Generic Setup</h2>
+<p>Below is a project setup that I follow for machine learning projects.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>└── DATASET_1              &lt;-- Separate folder per dataset
+    │
+    ├── <span class="m">01</span>-Import.ipynb    &lt;-- sequence of notebooks that 
+    ├── <span class="m">02</span>-EDA.ipynb       &lt;--    focus on a single ML step
+    ├── <span class="m">03</span>-Model.ipynb     &lt;--    each runnable as is from current folder
+    │
+    ├── data               &lt;-- cleaned data ready <span class="k">for</span> EDA/analysis
+    ├── orig               &lt;-- original data before any cleaning/wrangling/etc
+    └── output             &lt;-- all generated content
+</code></pre></div>
+</td></tr></table>
+<p>You don't have to adopt this structure, but it has advantages:</p>
+<ul>
+<li>Separation of individual steps in the machine learning workflow <ul>
+<li>Reduces computation, reloading of data.</li>
+<li>Facilitates automation.</li>
+<li>Each notebook is runnable as is &mdash; regularly reset kernel and run all cells to verify that this property remains true. </li>
+</ul>
+</li>
+<li>Notebooks named to indicate order and purpose.</li>
+<li>Based on the practical/assignment I will either ask for the individual notebooks or the notebooks and the contents of the <code>output</code> directory.  We will cover this in a few weeks.</li>
+</ul>
+<h2>Example Setup &mdash; German Credit</h2>
+<p>This is a small dataset ((1000 observations) X (20 features + 1 target)) and is available from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german">UCL</a> in two formats, we are going to use the original format and the associated datasheet so you get more exposure in cleaning data.</p>
+<p>The outline of steps needed are:</p>
+<p><strong>Step 1:</strong> In your <code>datasets</code> folder create a folder to store all files relating to the German Credit dataset, I use <code>German_Credit</code>.</p>
+<p><strong>Step 2:</strong>  Create a new notebook, called <code>01-Import.ipynb</code> and create a cell with following contents (list of standard imports and settings)</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span> 
+
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Step 3:</strong>  Create file tree and download datasets.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;orig&#39;</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;output&#39;</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o777</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.doc&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data-numeric&quot;</span><span class="p">]:</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;orig/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading remote file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="kn">import</span> <span class="nn">urllib.request</span>
+        <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using local copy of </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Step 4:</strong> Import dataset and view data.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;orig/german.data&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>This should have output</p>
+<p><img src="files/01-read_csv.png" width=100%></p>
+<p>Note:</p>
+<ul>
+<li>ALWAYS, ALWAYS output the dataset shape &mdash; simplest sanity check of data.</li>
+<li>No header information in dataset.</li>
+<li>Data is encoded, details in <code>german.doc</code>.</li>
+</ul>
+<p><strong>Step 5:</strong> Label the columns</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Account_Balance&quot;</span><span class="p">,</span> <span class="s2">&quot;Loan_Duration&quot;</span><span class="p">,</span> <span class="s2">&quot;Credit_History&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Loan_Purpose&quot;</span><span class="p">,</span> <span class="s2">&quot;Loan_Amount&quot;</span><span class="p">,</span> <span class="s2">&quot;Savings&quot;</span><span class="p">,</span> <span class="s2">&quot;Years_Employed&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Installment_Rate&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender_and_Status&quot;</span><span class="p">,</span> <span class="s2">&quot;Other_Debtors_Guarantors&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Year_of_Residence&quot;</span><span class="p">,</span> <span class="s2">&quot;Property&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Installment_Plans&quot;</span><span class="p">,</span> <span class="s2">&quot;Housing&quot;</span><span class="p">,</span> <span class="s2">&quot;Existing_Credits&quot;</span><span class="p">,</span> <span class="s2">&quot;Job&quot;</span><span class="p">,</span> <span class="s2">&quot;Dependents&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Telephone&quot;</span><span class="p">,</span> <span class="s2">&quot;Foreign&quot;</span><span class="p">,</span> 
+    <span class="s2">&quot;Credit_Rating&quot;</span><span class="p">]</span>
+</code></pre></div>
+</td></tr></table>
+<p><strong>Step 6:</strong> Preprocess the dataset so that it contains descriptive string based on data from <code>german.doc</code> rather just the existing category codes:</p>
+<ul>
+<li>Create a new dataset, called <code>df_labeled</code>, as a copy of <code>df</code>.</li>
+<li>For each categorical feature, replace the category code with a string (code + description) taken from <code>german.doc</code> so the resulting dataset looks like in the following image.</li>
+<li>Convert features to suitable type (Category with (un)ordered labels).</li>
+</ul>
+<p><img src="files/02-labeled.png" width=100%></p>
+<p>There is a number of ways to do the above steps. I use regular expressions to parse <code>german.doc</code> and <code>yaml</code> to store the resulting encoding dictionary for later use.  </p>
+<p><strong>Step 7:</strong> Save labeled dataset to <code>data</code> folder. Use <code>pickle</code> format, instead of <code>csv</code>, so that meta information (data type, etc) is preserved.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df_labeled</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s2">&quot;data/df_labeled.pickle&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/mapping.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Ok we are now ready to move to the next step, exploratory data analysis.</p>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Data_Exploration.html">Next (Data Exploration) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

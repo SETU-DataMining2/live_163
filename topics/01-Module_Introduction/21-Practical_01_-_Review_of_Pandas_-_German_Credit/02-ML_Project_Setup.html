@@ -171,18 +171,52 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>└── DATASET_1              &lt;-- Separate folder per dataset
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>└── DATASET_1                      &lt;-- Separate folder per dataset
     │
-    ├── <span class="m">01</span>-Import.ipynb    &lt;-- sequence of notebooks that 
-    ├── <span class="m">02</span>-EDA.ipynb       &lt;--    focus on a single ML step
-    ├── <span class="m">03</span>-Model.ipynb     &lt;--    each runnable as is from current folder
+    ├── DATASET-01-Import.ipynb    &lt;-- sequence of notebooks that 
+    ├── DATASET-02-EDA.ipynb       &lt;--    focus on a single ML step
+    ├── DATASET-03-Model.ipynb     &lt;--    each runnable as is from current folder
     │
-    ├── data               &lt;-- cleaned data ready <span class="k">for</span> EDA/analysis
-    ├── orig               &lt;-- original data before any cleaning/wrangling/etc
-    └── output             &lt;-- all generated content
+    ├── data                   &lt;-- cleaned data ready <span class="k">for</span> EDA/analysis
+    ├── orig                   &lt;-- original data before any cleaning/wrangling/etc
+    └── output                 &lt;-- all generated content
 </code></pre></div>
 </td></tr></table>
-<p>You don't have to adopt this structure, but it has advantages:</p>
+<div class="alert alert-warning">
+    UPDATE: Change to support using notebooks in COLAB and on local machines.
+    <ul>
+        <li>
+            <p>
+                In COLAB all notebooks are stored in the same folder, so we need to include the dataset name in the notebook name, otherwise it is likely you will upload the wrong notebook when submitting your assignments.<br />
+            </p>
+            <p>
+                So the naming convention that we will use for notebooks is 
+                <pre>
+                    DATASET-NUM-TASK.ipynb 
+                </pre>
+                <ul>
+                    <li>
+                        where
+                        <code>DATASET</code> is the name of the dataset, 
+                        <code>NUM</code> is a two-digit, zero-padded task number, and 
+                        <code>TASK</code> is the task name.
+                    </li>
+                    <li>You can leave out the <code>DATASET-</code> if you are always working locally.</li>
+                    <li>
+                        You can append any string between the <code>TASK</code> and <code>.ipynb</code> &mdash; my grading script will ignore it.
+                    </li>
+                </ul>
+            </p>
+        </li>
+
+        <li>
+            We need to link the google drive to the COLAB account so that we can use datasets between notebooks and to save our work for later use. However in COLAB we can't have datasets and output in a sub-folder of the current folder so we will need to update the directory/file access code given below.
+        </li>
+    </ul>
+
+</div>
+
+<p>You don't have to adopt this structure, but it has advantages, in that if you do, than any issues with grading are my fault and not yours :-).</p>
 <ul>
 <li>Separation of individual steps in the machine learning workflow <ul>
 <li>Reduces computation, reloading of data.</li>
@@ -234,6 +268,19 @@
 </code></pre></div>
 </td></tr></table>
 <p><strong>Step 3:</strong>  Create file tree and download datasets.</p>
+<div class="alert alert-warning">
+    UPDATE: Changed to support using notebooks in COLAB and on local machines. 
+    <ul>
+        <li>
+        Created variable <code>ROOT</code> which contains the root directory which the subfolders 
+        <code>orig</code>, <code>data</code>, and <code>output</code>. If working locally then this just the current folder.
+        </li>
+        <li>
+        All file access from here to the end has a <code>f"{ROOT}/"</code> prefix.
+        </li>
+    </ul>
+</div>
+
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -247,14 +294,48 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">DATASET</span> <span class="o">=</span> <span class="s2">&quot;German Credit&quot;</span>
 
-<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;orig&#39;</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;output&#39;</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o777</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
 
-<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.doc&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data-numeric&quot;</span><span class="p">]:</span>
+<span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s2">&quot;/content/gdrive&quot;</span><span class="p">):</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;/content/gdrive&quot;</span><span class="p">)</span>
+  <span class="n">ROOT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/content/gdrive/MyDrive/datasets/</span><span class="si">{</span><span class="n">DATASET</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/&quot;</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">ROOT</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
+
+<span class="k">def</span> <span class="nf">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o777</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;orig&#39;</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;output&#39;</span><span class="p">]:</span> <span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Next cell downloads the required files and save a copy "locally" </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data&quot;</span><span class="p">,</span> <span class="s2">&quot;german.doc&quot;</span><span class="p">,</span> <span class="s2">&quot;german.data-numeric&quot;</span><span class="p">]:</span>
     <span class="n">source</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;orig/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/orig/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
         <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading remote file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="kn">import</span> <span class="nn">urllib.request</span>
@@ -266,7 +347,7 @@
 <p><strong>Step 4:</strong> Import dataset and view data.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;orig/german.data&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/orig/german.data&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
@@ -302,16 +383,20 @@
 <p><img src="files/02-labeled.png" width=100%></p>
 <p>There is a number of ways to do the above steps. I use regular expressions to parse <code>german.doc</code> and <code>yaml</code> to store the resulting encoding dictionary for later use.  </p>
 <p><strong>Step 7:</strong> Save labeled dataset to <code>data</code> folder. Use <code>pickle</code> format, instead of <code>csv</code>, so that meta information (data type, etc) is preserved.</p>
+<div class="alert alert-warning">
+    UPDATE: Note the change to support using notebooks in COLAB and on local machines. 
+</div>
+
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df_labeled</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="s2">&quot;data/df_labeled.pickle&quot;</span><span class="p">)</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df_labeled</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/data/df_labeled.pickle&quot;</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/mapping.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/data/mapping.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
     <span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">mapping</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-<p>Ok we are now ready to move to the next step, exploratory data analysis.</p>
+<p>Ok we are now ready to move to the next step, exploratory data analysis (EDA).</p>
 		
 		<ul class="pager">
 			

@@ -1,0 +1,160 @@
+<h1>German Credit - EDA</h1>
+
+<h2>Question 1</h2>
+
+What is the total of <code>Loan_Amount</code>?
+
+<pre>
+df.Loan_Amount.sum()
+</pre>
+
+<h2>Question 2</h2>
+
+What is the mean <code>Loan_Duration</code> to 2DP?
+
+<pre>
+df.Loan_Duration.mean()
+</pre>
+
+<h2>Question 3</h2>
+
+What is the standard deviation of <code>Loan_Amount</code> (to 2DP)?
+
+<pre>
+df.Loan_Amount.std()
+</pre>
+
+<h2>Question 4</h2>
+
+What is the mean <code>Loan_Amount</code> for applications that have <code>Year_of_Residence</code> equal to 1 (answer to 2DP)?
+
+<pre>
+df.loc[df.Year_of_Residence==1,"Loan_Amount"].mean()
+</pre>
+
+<h2>Question 5</h2>
+
+What is the range of <code>Loan_Amount</code>?
+
+<pre>
+df.Loan_Amount.max() - df.Loan_Amount.min()
+</pre>
+
+<h2>Question 6</h2>
+
+Classify the <code>Age</code> distribution as:
+
+<pre>
+print("Right-skewed")
+</pre>
+
+<h2>Question 7</h2>
+
+What is the interquartile range (IQR) of <code>Loan_Amount</code> (to 2DP)?
+
+<pre>
+q1, q3 = df.Loan_Amount.quantile([.25,.75]).values
+q3 - q1
+</pre>
+
+<h2>Question 8</h2>
+
+Using the 1.5*IQR from the quartiles rule, how many outlier observations are in <code>Loan_Amount</code>?
+
+<pre>
+q1, q3 = df.Loan_Amount.quantile([0.25,0.75]).values
+iqr = q3 - q1
+(df.Loan_Amount&lt;q1-1.5*iqr).sum() + (df.Loan_Amount&gt;q3+1.5*iqr).sum()
+</pre>
+
+<h2>Question 9</h2>
+
+What is the third most popular reason cited for loan?
+
+<pre>
+df_tmp = df["Loan_Purpose"].value_counts()
+df_tmp.index[2]
+</pre>
+
+<h2>Question 10</h2>
+
+How many distinct reasons are cited for asking for a loan?
+
+<pre>
+df["Loan_Purpose"].nunique()
+</pre>
+
+<h2>Question 11</h2>
+
+Which reason cited for loan has the highest rate of bad claims?
+
+<pre>
+df_tmp = pd.crosstab(df.Loan_Purpose, df.Credit_Rating,normalize="index").reset_index().sort_values("Bad", ascending=False)
+df_tmp.Loan_Purpose.values[0]
+</pre>
+
+<h2>Question 12</h2>
+
+Which <code>Credit_History</code> has the lowest rate of bad claims?
+
+<pre>
+df_tmp = pd.crosstab(df.Credit_History, df.Credit_Rating,normalize="index").reset_index().sort_values("Bad", ascending=True)
+df_tmp.Credit_History.values[0]
+</pre>
+
+<h2>Question 13</h2>
+
+What is the average age of applicants that have  <code>Credit_Rating</code> of <code>Bad</code>?
+
+<pre>
+df_tmp = df.groupby("Credit_Rating")["Age"].mean()
+df_tmp['Bad']
+</pre>
+
+<h2>Question 14</h2>
+
+How many reasons cited for loans have a mean <code>Loan_Duration</code> greater than the mean of <code>Loan_Duration</code> overall?
+
+<pre>
+df[["Loan_Duration","Loan_Amount"]].corr().values[0,1]
+</pre>
+
+<h2>Question 15</h2>
+
+What is the correlation between <code>Loan_Duration</code> and <code>Loan_Amount</code> (to 2DP)?
+
+<pre>
+df_tmp = df.Gender_and_Status.value_counts(normalize=True)
+correct = df_tmp['(A92) female : divorced/separated/married']
+</pre>
+
+<h2>Question 16</h2>
+
+What is the probability of an applicant is female? (enter answer as a decimal to 2DP)?
+
+<pre>
+df_tmp = df.Gender_and_Status.value_counts(normalize=True)
+df_tmp['(A92) female : divorced/separated/married']
+</pre>
+
+<h2>Question 17</h2>
+
+What is the probability of an applicant that owns their own property, does not have a telephone? (enter answer as a decimal to 2DP)?
+
+<pre>
+df.loc[df.Housing=='(A152) own']['Telephone'].value_counts(normalize=True)['(A191) none']
+</pre>
+
+<h2>Question 18</h2>
+
+Which categorical feature has the most impact on the target (using chi2 as the metric)?
+
+<pre>
+data = [
+    [c,stats.chi2_contingency(pd.crosstab(df[c], df['Credit_Rating']))[1]]
+    for c in df.select_dtypes("object") if c!="Credit_Rating"
+]
+df_tmp = pd.DataFrame(data)
+df_tmp.columns = ["Feature", "chi2"]
+df_tmp.sort_values("chi2")["Feature"].values[0]
+</pre>

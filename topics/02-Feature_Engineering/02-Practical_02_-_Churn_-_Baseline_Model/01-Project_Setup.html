@@ -97,7 +97,7 @@
 										<li class="dropdown-header">Resources</li>
 										
 										<li >
-											<a href="../../../topics/02-Feature_Engineering/index.html#01-Introduction_to_Feature_Engineering">Introduction to Feature Engineering</a>
+											<a href="../../../topics/02-Feature_Engineering/index.html#01-German_Credit_-_Feedback">German Credit - Feedback</a>
 										</li>
 										
 										<li class="active">
@@ -105,7 +105,11 @@
 										</li>
 										
 										<li >
-											<a href="../../../topics/02-Feature_Engineering/index.html#03-Feature_Selection">Feature Selection</a>
+											<a href="../../../topics/02-Feature_Engineering/index.html#03-Introduction_to_Feature_Engineering">Introduction to Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html#04-Feature_Selection">Feature Selection</a>
 										</li>
 										
 										<li >
@@ -216,10 +220,10 @@
         ├── orig                Location of data before any editing/cleaning
         ├── data                Location of cleaned/processed/etc data
         ├── output              All plots, tables etc generated  
-        ├── <span class="m">01</span>-Import.ipynb     Download, parse, and initial clean/standardisation of data
-        ├── <span class="m">02</span>-EDA.ipynb        Exploratory Data Analysis <span class="o">(</span>EDA<span class="o">)</span>
-        ├── <span class="m">03</span>-Baseline.ipynb   Build baseline model
-        ├── ??-TASK.ipynb       Notebook to <span class="k">do</span> ...
+        ├── Churn-01-Import.ipynb       Download, parse, and initial clean/standardisation of data
+        ├── Churn-02-EDA.ipynb          Exploratory Data Analysis <span class="o">(</span>EDA<span class="o">)</span>
+        ├── Churn-03-Baseline.ipynb     Build baseline model
+        ├── Churn-??-TASK.ipynb         Notebook to <span class="k">do</span> ...
 </code></pre></div>
 </td></tr></table>
 <p><strong>Each</strong> notebook uses markdown cells for sectioning and has a first cell with at least the following code:</p>
@@ -237,7 +241,13 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
@@ -249,7 +259,13 @@
 <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">yaml</span>
 
 <span class="n">DATASET</span> <span class="o">=</span> <span class="s2">&quot;Churn&quot;</span>
+
 <span class="n">COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+    <span class="n">ROOT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/content/gdrive/MyDrive/datasets/</span><span class="si">{</span><span class="n">DATASET</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ROOT</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
+
 <span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">SEED</span> <span class="o">=</span> <span class="mi">666</span>
 </code></pre></div>

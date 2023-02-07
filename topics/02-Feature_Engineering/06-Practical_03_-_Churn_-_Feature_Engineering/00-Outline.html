@@ -97,7 +97,7 @@
 										<li class="dropdown-header">Resources</li>
 										
 										<li >
-											<a href="../../../topics/02-Feature_Engineering/index.html#01-Introduction_to_Feature_Engineering">Introduction to Feature Engineering</a>
+											<a href="../../../topics/02-Feature_Engineering/index.html#01-German_Credit_-_Feedback">German Credit - Feedback</a>
 										</li>
 										
 										<li >
@@ -105,7 +105,11 @@
 										</li>
 										
 										<li >
-											<a href="../../../topics/02-Feature_Engineering/index.html#03-Feature_Selection">Feature Selection</a>
+											<a href="../../../topics/02-Feature_Engineering/index.html#03-Introduction_to_Feature_Engineering">Introduction to Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html#04-Feature_Selection">Feature Selection</a>
 										</li>
 										
 										<li >
@@ -166,15 +170,12 @@
 		
 		<h1>Practical 03 &mdash;  Churn &mdash; Feature Engineering</h1>
 <p>In this practical we will try to keep everything else fixed and focus on one single aspect of the data mining pipeline &mdash; feature engineering, or more specifically feature extraction and feature selection. (Yes, I'm aware of the inconsistently between "single" and the use of "and". :-/)  </p>
-<p>You starting point is the notebook <a href="./files/03-Feature_Engineering.ipynb">03-Feature_Engineering.ipynb</a> which:</p>
+<p>Your starting point is the notebooks</p>
 <ul>
-<li>Assumes that you have carried out the loading and initial cleaning of the dataset. We did this last week, see a PDF of my notebook from last week
-    <a href="./files/01-Import.pdf">01-Churn_-_Import.pdf</a>.</li>
-<li>Assumes that you have done some EDA to direct your feature engineering.  Since I want to encourage you to use whatever tools you wish (<code>pandas-profilling</code> and/or <code>dtale</code> and/or ....) in order to do this step I won't be asking to see your notebook for this.</li>
-<li>Creates a single feature. This feature is intentionally silly, its sole purpose is to illustrate the process.</li>
-<li>Specifies the desired metric - in this case, f1 score.</li>
-<li>Carries out training of a few classifiers.</li>
-<li>Applies automatic feature selection and model training using to obtain final metric.</li>
+<li><a href="./files/US_Churn-01-Import.ipynb">US_Churn-01-Import.ipynb</a></li>
+<li><a href="./files/US_Churn-02-EDA.ipynb">US_Churn-02-EDA.ipynb</a></li>
+<li><a href="./files/US_Churn-03-Baseline_Model.ipynb">US_Churn-03-Baseline_Model.ipynb</a> </li>
+<li><a href="./files/US_Churn-04-Feature_Engineering.ipynb">US_Churn-04-Feature_Engineering.ipynb</a> </li>
 </ul>
 <p>Your job this week is to create new features to <strong>see if it is possible</strong> to find features to better explain the target and hopefully result in a better score (as defined in the notebook).</p>
 <p alert="alert" class="alert-warning">To keep this exercise as realistic as possible I'm not going to tell you which features will be of benefit, nor how much (if any) the chosen metric can be improved. My role is to answer questions re constructing specific features (even if I know that the resulting feature will be of no use).</p>
@@ -219,37 +220,34 @@
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Model</span> <span class="n">NB</span>
-    <span class="n">CV</span> <span class="n">scores</span> <span class="p">[</span><span class="s1">&#39;0.5333&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4727&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4194&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5926&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4364&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4615&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5902&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6032&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4483&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3929&#39;</span><span class="p">]</span>
-    <span class="n">mean</span><span class="o">=</span><span class="mf">49.50</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0743</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Model</span> <span class="n">LR</span>
+    <span class="n">CV</span> <span class="n">scores</span><span class="p">:</span> <span class="mf">0.86</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.86</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.87</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.84</span><span class="p">,</span> <span class="mf">0.86</span>
+    <span class="n">mean</span><span class="o">=</span><span class="mf">85.84</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0095</span>
+
+<span class="n">Model</span> <span class="n">DT</span>
+    <span class="n">CV</span> <span class="n">scores</span><span class="p">:</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.89</span>
+    <span class="n">mean</span><span class="o">=</span><span class="mf">90.64</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0119</span>
+
+<span class="n">Model</span> <span class="n">DT</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">CV</span> <span class="n">scores</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.86</span>
+    <span class="n">mean</span><span class="o">=</span><span class="mf">89.79</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0175</span>
 
 <span class="n">Model</span> <span class="n">KNN</span>
-    <span class="n">CV</span> <span class="n">scores</span> <span class="p">[</span><span class="s1">&#39;0.2857&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4103&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3333&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4737&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3333&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4390&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5957&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3590&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2162&#39;</span><span class="p">]</span>
-    <span class="n">mean</span><span class="o">=</span><span class="mf">39.46</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.1061</span>
-
-<span class="n">Model</span> <span class="n">LogisticRegression</span>
-    <span class="n">CV</span> <span class="n">scores</span> <span class="p">[</span><span class="s1">&#39;0.4545&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1905&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1860&#39;</span><span class="p">,</span> <span class="s1">&#39;0.3077&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1667&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2632&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4545&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4681&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2439&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1538&#39;</span><span class="p">]</span>
-    <span class="n">mean</span><span class="o">=</span><span class="mf">28.89</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.1198</span>
+    <span class="n">CV</span> <span class="n">scores</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.88</span>
+    <span class="n">mean</span><span class="o">=</span><span class="mf">89.39</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0134</span>
 
 <span class="n">Model</span> <span class="n">SVC</span>
-    <span class="n">CV</span> <span class="n">scores</span> <span class="p">[</span><span class="s1">&#39;0.5500&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5778&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5455&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6512&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5909&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6190&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6818&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6222&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6522&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5000&#39;</span><span class="p">]</span>
-    <span class="n">mean</span><span class="o">=</span><span class="mf">59.91</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0538</span>
+    <span class="n">CV</span> <span class="n">scores</span><span class="p">:</span> <span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.91</span><span class="p">,</span> <span class="mf">0.89</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="mf">0.90</span>
+    <span class="n">mean</span><span class="o">=</span><span class="mf">91.09</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0136</span>
 
-<span class="n">Model</span> <span class="n">DT</span> <span class="p">(</span><span class="n">pruned</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    <span class="n">CV</span> <span class="n">scores</span> <span class="p">[</span><span class="s1">&#39;0.6000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6809&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6667&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5957&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6522&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6923&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6538&#39;</span><span class="p">,</span> <span class="s1">&#39;0.5778&#39;</span><span class="p">,</span> <span class="s1">&#39;0.6531&#39;</span><span class="p">,</span> <span class="s1">&#39;0.4762&#39;</span><span class="p">]</span>
-    <span class="n">mean</span><span class="o">=</span><span class="mf">62.49</span><span class="o">%</span> <span class="n">std</span><span class="o">=</span><span class="mf">0.0613</span>
-
-<span class="n">Best</span> <span class="n">Performing</span> <span class="n">Model</span> <span class="n">DT</span> <span class="p">(</span><span class="n">pruned</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">with</span> <span class="n">mean</span><span class="o">=</span><span class="mf">62.49</span><span class="o">%</span>
+<span class="n">Best</span> <span class="n">Performing</span> <span class="n">Model</span> <span class="n">SVC</span> <span class="k">with</span> <span class="p">(</span><span class="n">mean</span> <span class="n">CV</span> <span class="n">of</span><span class="p">)</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="mf">91.09</span><span class="o">%</span>
 </code></pre></div>
 </td></tr></table>
 <h2>Submission</h2>
-<p>Upload to Moodle using the link below your notebook, <code>03-Feature_Engineering.ipynb</code>.<br />
-Don't use compression and only upload the notebook, as is. Make sure:</p>
-<ul>
-<li>It is possible to execute all the cells in the notebook without manual intervention to change path/filenames/columns if placed in folder where <code>01-Import.ipynb</code> has been executed.</li>
-</ul>
+<p>Upload to Moodle zip archive created by code at end of 
+<a href="./files/US_Churn-04-Feature_Engineering.ipynb">US_Churn-04-Feature_Engineering.ipynb</a> </p>
 <div class="pager">
-<a class="btn btn-primary btn-lg" target="_blank" href="https://moodle.wit.ie/mod/assign/view.php?id=3715531" role="button">Submit using Moodle</a>
+<a class="btn btn-primary btn-lg" target="_blank" href="https://moodle.wit.ie/mod/assign/view.php?id=3970504" role="button">Submit using Moodle</a>
 </div>
 		
 		<ul class="pager">

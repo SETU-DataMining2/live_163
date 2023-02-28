@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Mining 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html">Module Introduction</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html">Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/03-Review_of_Model_Building/index.html">Review of Model Building</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html">Hyperparameter Tuning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html">Assignments</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html#01-Introduction_to_Hyperparameters">Introduction to Hyperparameters</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html#02-Hyperparameter_Tuning">Hyperparameter Tuning</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html#21-Practical_05_-_Wisconsin_Breast_Cancer_-_Hyperparameter_Tuning">Practical 05 - Wisconsin Breast Cancer - Hyperparameter Tuning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html#42-Additional_Resources">Additional Resources</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Setup</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li class="active">
+											<a href="01-Setup.html">Setup</a>
+										</li>
+										
+										<li >
+											<a href="02-GridSearch.html">GridSearch</a>
+										</li>
+										
+										<li >
+											<a href="03-optuna.html">optuna</a>
+										</li>
+										
+										<li >
+											<a href="04-hyperopt.html">hyperopt</a>
+										</li>
+										
+										<li >
+											<a href="11-ray-tune_TuneGridSearchCV.html">ray-tune TuneGridSearchCV</a>
+										</li>
+										
+										<li >
+											<a href="12-ray-tune_optuna.html">ray-tune optuna</a>
+										</li>
+										
+										<li >
+											<a href="13-ray-tune_hyperopt.html">ray-tune hyperopt</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="00-Outline.html">&larr; Previous (Outline)</a></li>
+			
+			
+			
+			<li class="next"><a href="02-GridSearch.html">Next (GridSearch) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Setup Notebook</h1>
+<p>Create a notebook with the following structure</p>
+<h2>Imports and Setup</h2>
+<p>Load in the standard libraries ...</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">yaml</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn-darkgrid&quot;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+
+<span class="n">DATASET</span> <span class="o">=</span> <span class="s2">&quot;BC_Wisconsin&quot;</span>
+
+<span class="n">COLAB</span> <span class="o">=</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+    <span class="n">ROOT</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/content/gdrive/MyDrive/datasets/</span><span class="si">{</span><span class="n">DATASET</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ROOT</span> <span class="o">=</span> <span class="s2">&quot;./&quot;</span>
+
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+</td></tr></table>
+<p>Then make the project tree</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+  <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s2">&quot;/content/gdrive&quot;</span><span class="p">):</span>
+    <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;/content/gdrive&quot;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;/content/gdrive/MyDrive/datasets&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">COLAB</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">):</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">ROOT</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o777</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;orig&#39;</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;output&#39;</span><span class="p">]:</span> <span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Datasets</h2>
+<p>Load dataset (using remote version if local is not available) ...</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">UCI</span> <span class="o">=</span> <span class="s2">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/&quot;</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;wdbc.data&quot;</span><span class="p">,</span> <span class="s2">&quot;wdbc.names&quot;</span><span class="p">]:</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">UCI</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/orig/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading remote file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="kn">import</span> <span class="nn">urllib.request</span>
+        <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using local copy of </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Perform initial clean ...</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_number&#39;</span><span class="p">,</span> <span class="s1">&#39;diagnosis&#39;</span><span class="p">,</span> <span class="s1">&#39;radius_mean&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;texture_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;perimeter_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;area_mean&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;smoothness_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;compactness_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_mean&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;concave_points_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetry_mean&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;fractal_dimension_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;radius_se&#39;</span><span class="p">,</span> <span class="s1">&#39;texture_se&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;perimeter_se&#39;</span><span class="p">,</span> <span class="s1">&#39;area_se&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_se&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;compactness_se&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_se&#39;</span><span class="p">,</span> <span class="s1">&#39;concave_points_se&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;symmetry_se&#39;</span><span class="p">,</span> <span class="s1">&#39;fractal_dimension_se&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;radius_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;texture_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;perimeter_worst&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;area_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_worst&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;compactness_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_worst&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;concave_points_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetry_worst&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;fractal_dimension_worst&#39;</span><span class="p">]</span> 
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/data/wdbc.data&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reading original data ...&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/orig/wdbc.data&quot;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encoding target ...&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">diagnosis</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">diagnosis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;M&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span> <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Drop unique identifieer ...&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id_number&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Save to folder data/  ...&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/data/wdbc.data&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load from folder data/ ...&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ROOT</span><span class="si">}</span><span class="s2">/data/wdbc.data&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Preprocessing</h2>
+<p>Do nothing, not even train-test split (will rely on CV scores in training), or scaling (will use DT based model which are more robust to differences in feature variation).</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">diagnosis</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Model Selection</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Baseline Model</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>which should have output</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">(</span><span class="m">0</span>.9666666666666666, <span class="m">0</span>.024118819447136005<span class="o">)</span>
+</code></pre></div>
+</td></tr></table>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="00-Outline.html">&larr; Previous (Outline)</a></li>
+			
+			
+			
+			<li class="next"><a href="02-GridSearch.html">Next (GridSearch) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

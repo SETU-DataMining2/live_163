@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Mining 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html">Module Introduction</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html">Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/03-Review_of_Model_Building/index.html">Review of Model Building</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html">Hyperparameter Tuning</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/05-Ensemble_Learning/index.html">Ensemble Learning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/06-Time_Series_Mining/index.html">Time Series Mining</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html">Assignments</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/05-Ensemble_Learning/index.html#01-Introduction_to_Ensemble_Learning">Introduction to Ensemble Learning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/05-Ensemble_Learning/index.html#21-Practical_05_-_Ensemble_Learners">Practical 05 - Ensemble Learners</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/05-Ensemble_Learning/index.html#22-Practical_06_-_Stacked_Models">Practical 06 - Stacked Models</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Clean and EDA</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Datasets.html">Datasets</a>
+										</li>
+										
+										<li class="active">
+											<a href="02-Clean_and_EDA.html">Clean and EDA</a>
+										</li>
+										
+										<li >
+											<a href="03-Preprocessing.html">Preprocessing</a>
+										</li>
+										
+										<li >
+											<a href="04-Base_Learners.html">Base Learners</a>
+										</li>
+										
+										<li >
+											<a href="05-Stacked_Learner.html">Stacked Learner</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Datasets.html">&larr; Previous (Datasets)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Preprocessing.html">Next (Preprocessing) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Cleaning and EDA</h1>
+<p>Create subsection <code>## Clean and EDA</code>.</p>
+<p>A quick look at the dataset should show you:</p>
+<ul>
+<li>Target has three levels <code>non_stem</code>, <code>stem</code>, and <code>student</code>.<ul>
+<li>Will drop <code>students</code> so will have a binary classification problem.</li>
+</ul>
+</li>
+<li>Categorical features are of <code>category</code> type <ul>
+<li>Need to update categories when cleaning/feature engineering.</li>
+</ul>
+</li>
+<li>Many features have large number of missing values:<ul>
+<li>For categorical features we will create a new category "NaN".</li>
+</ul>
+</li>
+<li>Many categorical features have large number of levels and/or have rare levels.<ul>
+<li>Bin to improve quality of features.</li>
+</ul>
+</li>
+</ul>
+<h2>Target</h2>
+<p>Drop <code>students</code> to result in a binary classification problem.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># drop rows with target==&#39;student&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">!=</span><span class="s2">&quot;student&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># reset category levels in target</span>
+<span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Features</h2>
+<p>Over time you should find that you perform similar analysis across multiple datasets and to reduce effort you should start wrapping your code into functions (and ultimately pushing the functions into python scripts). For example, we often want to look at a categorical feature and see how frequent are its levels and the categorical target level breakdown per feature level. The following function is based on one that I often use:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">eda_cat</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+    <span class="c1"># convert NaN to &quot;NaN&quot;</span>
+    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">add_categories</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create a 1x2 subplot</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># bar plot to show counts</span>
+    <span class="n">df_ct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">],</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">df_ct</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;All&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_ct</span><span class="p">[</span><span class="s1">&#39;All&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;counts&quot;</span><span class="p">)</span>
+
+    <span class="c1"># normalised stacked barplot to show breakdown</span>
+    <span class="n">df_ct</span> <span class="o">=</span> <span class="n">df_ct</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">df_ct</span><span class="o">.</span><span class="n">All</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df_ct</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">framealpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;breakdown wrt </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Feature </span><span class="si">{</span><span class="n">feature</span><span class="si">}</span><span class="s2"> - Count plot and breakdown wrt </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save</span><span class="p">:</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">save</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">save</span><span class="p">)</span><span class="o">==</span><span class="nb">str</span> <span class="k">else</span> <span class="n">feature</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;output/</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>Since the main purpose of this practical was building stacked models I'm only going to pick a subset of the features, namely:</p>
+<ul>
+<li><strong>Categorical:</strong> <code>body_type</code>, <code>diet</code>, <code>drinks</code>, <code>drugs</code>, <code>orientation</code>, <code>pets</code>, <code>religion</code>, <code>sex</code>, <code>smokes</code>, <code>status</code>.</li>
+<li><strong>Numerical:</strong> <code>age</code>, <code>height</code>.</li>
+</ul>
+<p>To keep track of my features I use two sets ...</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cat_features</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">num_features</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</code></pre></div>
+</td></tr></table>
+<p>... which I grow, as I clean features using ...</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">cat_features</span> <span class="o">|=</span> <span class="p">{</span><span class="n">feature</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2>Categorical Features</h2>
+<p>Running over categorical features, I used <code>eda_cat</code> to create a 'before' and `after' plot as performed some relatively basic preprocessing listed below.</p>
+<h3>body_type</h3>
+<ul>
+<li>Merge rare level "rather not say" and "used up" with "NaN".</li>
+<li>Merge rare level "a little extra" with "overweight".</li>
+<li>Merge rare level "jacked" with "fit".</li>
+<li>Merge rare level "full figured" with "curvy" - here I'm assuming "curvy" does not mean a "dad bod".</li>
+</ul>
+<figure>
+    <img src="files/body_type_before.png" width="45%">
+    <font size="+2">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</font>
+    <img src="files/body_type_after.png" width="45%">
+    <figcaption>body_type</figcaption>
+</figure>
+
+<h3>diet</h3>
+<ul>
+<li>Treat all levels with frequency less that that of "strictly other" as rare and merge with "mostly other".</li>
+<li>Merge "strictly vegetarian" with "vegetarian".</li>
+</ul>
+<figure>
+    <img src="files/diet_before.png" width="45%">
+    <font size="+2">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</font>
+    <img src="files/diet_after.png" width="45%">
+    <figcaption>diet</figcaption>
+</figure>
+
+<h3>drinks</h3>
+<ul>
+<li>Merge "very often" and "desperately" with "often".</li>
+</ul>
+<figure>
+    <img src="files/drinks_before.png" width="45%">
+    <font size="+2">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</font>
+    <img src="files/drinks_after.png" width="45%">
+    <figcaption>drinks</figcaption>
+</figure>
+
+<h3>drugs</h3>
+<ul>
+<li>Merge "often" with "sometimes".</li>
+</ul>
+<figure>
+    <img src="files/drugs_before.png" width="45%">
+    <font size="+2">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</font>
+    <img src="files/drugs_after.png" width="45%">
+    <figcaption>drugs</figcaption>
+</figure>
+
+<h3>orientation</h3>
+<ul>
+<li>no change</li>
+</ul>
+<figure>
+    <img src="files/orientation_before.png" width="45%">
+    <figcaption>orientation</figcaption>
+</figure>
+
+<h3>pets</h3>
+<ul>
+<li>Create four binary features <code>dislikes_dogs</code>, <code>likes_dogs</code>, <code>dislikes_cats</code>, <code>likes_cats</code> by assuming that if someone has a cat/dog they actually like them. </li>
+</ul>
+<figure>
+    <img src="files/orientation_before.png" width="45%">
+    <figcaption>pets</figcaption>
+</figure>
+
+<h3>sex</h3>
+<ul>
+<li>no change</li>
+</ul>
+<figure>
+    <img src="files/sex_before.png" width="45%">
+    <figcaption>sex</figcaption>
+</figure>
+
+<h3>smokes</h3>
+<ul>
+<li>no change</li>
+</ul>
+<figure>
+    <img src="files/smokes_before.png" width="45%">
+    <figcaption>smokes</figcaption>
+</figure>
+
+<h3>religion</h3>
+<ul>
+<li>Decided to group levels by religion. Arguably a better approach is to merge those "not serious" regardless of religion. </li>
+<li>Then merged rare "islam" and "hinduism" with "other".</li>
+</ul>
+<figure>
+    <img src="files/religion_before.png" width="45%">
+    <font size="+2">&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</font>
+    <img src="files/religion_after.png" width="45%">
+    <figcaption>religion</figcaption>
+</figure>
+
+<h3>status</h3>
+<ul>
+<li>Did nothing</li>
+</ul>
+<figure>
+    <img src="files/status_before.png" width="45%">
+    <figcaption>status</figcaption>
+</figure>
+
+<h2>Numerical Features</h2>
+<h3>age</h3>
+<ul>
+<li>Has outliers but will leave them as is</li>
+</ul>
+<figure>
+    <img src="files/age_before.png" width="45%">
+    <figcaption>height</figcaption>
+</figure>
+
+<h3>height</h3>
+<ul>
+<li>Has outliers but will leave them as is</li>
+<li>However you will need to drops rows with missing values.</li>
+</ul>
+<figure>
+    <img src="files/height_before.png" width="45%">
+    <figcaption>height</figcaption>
+</figure>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Datasets.html">&larr; Previous (Datasets)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Preprocessing.html">Next (Preprocessing) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

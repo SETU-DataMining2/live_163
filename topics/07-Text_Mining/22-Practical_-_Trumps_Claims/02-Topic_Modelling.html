@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Mining 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html">Module Introduction</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html">Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/03-Review_of_Model_Building/index.html">Review of Model Building</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html">Hyperparameter Tuning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/05-Ensemble_Learning/index.html">Ensemble Learning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/06-Time_Series_Mining/index.html">Time Series Mining</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/07-Text_Mining/index.html">Text Mining</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html">Assignments</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/07-Text_Mining/index.html#01-Regular_Expressions">Regular Expressions</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/07-Text_Mining/index.html#02-Introduction_to_Text_Mining">Introduction to Text Mining</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/07-Text_Mining/index.html#22-Practical_-_Trumps_Claims">Practical - Trumps Claims</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Topic Modelling</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Preprocessing.html">Preprocessing</a>
+										</li>
+										
+										<li class="active">
+											<a href="02-Topic_Modelling.html">Topic Modelling</a>
+										</li>
+										
+										<li >
+											<a href="03-Temporal_View.html">Temporal View</a>
+										</li>
+										
+										<li >
+											<a href="04-Trending_Topics.html">Trending Topics</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Preprocessing.html">&larr; Previous (Preprocessing)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Temporal_View.html">Next (Temporal View) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Topic Modelling</h1>
+<p>Now that we have cleaned, tokenised and generated ngrams for our documents (claims), we are ready to perform topic modelling </p>
+<h2>Final test processing &mdash; generate bag of words</h2>
+<p>First we import the required modules</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">gensim.corpora</span> <span class="kn">import</span> <span class="n">Dictionary</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">LdaModel</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">LdaMulticore</span>
+<span class="kn">from</span> <span class="nn">gensim.models.coherencemodel</span> <span class="kn">import</span> <span class="n">CoherenceModel</span>
+</code></pre></div>
+</td></tr></table>
+<p>and extract the documents that we wish to use in our model.  Here I am using all rows/documents since I only have 30K and the resulting training only takes 3 minutes. For a larger dataset I would take a sample. </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>docs = df[&#39;ngrams&#39;].values
+</code></pre></div>
+</td></tr></table>
+<p>Before training a topic model we need to perform some additional processing:</p>
+<ul>
+<li><a href="https://radimrehurek.com/gensim/corpora/dictionary.html">Dictionary</a> is a dict-like collection that maps integer ids (keys) to words (values).</li>
+<li>Filter out tokens in the dictionary using their frequency (number of documents appears in).</li>
+<li>Create a list of bag of words </li>
+<li>Next we force the loading of the <code>dictionary</code> collection by accessing one of its keys.</li>
+<li>Finally we create a collection to map id-&gt;word (effectively reverse lookup of <code>dictionary</code>)</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">dictionary</span> <span class="o">=</span> <span class="n">Dictionary</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="n">dictionary</span><span class="o">.</span><span class="n">filter_extremes</span><span class="p">(</span><span class="n">no_below</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">no_above</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">]</span>
+
+<span class="c1"># Make a index to word dictionary.</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># This is only to &quot;load&quot; the dictionary.</span>
+<span class="n">id2word</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">id2token</span>
+</code></pre></div>
+</td></tr></table>
+<p>The collections <code>dictionary</code> and <code>corpus</code> can be inspected using usual python code:</p>
+<figure>
+<img src="files/corpus.png" width=90%>
+<figcaption>Size of dataset used in training model and sample BOW.</figcaption>
+</figure>
+
+<h3>Train LDA model</h3>
+<p>Latent Dirichlet Allocation (LDA) is a way of extracting latent, or hidden, topics from a set of documents. LDA assumes that documents are composed of a set of topics sampled from a probability distribution, and topics are composed of words sampled from a probability distribution.  It is important to note that LDA does not choose the number of topics for you, nor does it label the topics; labelling topics is up to you based on the most frequent words in the topic.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">num_topics</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="n">chunksize</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">passes</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">eval_every</span> <span class="o">=</span> <span class="mi">1</span> 
+
+<span class="c1"># Make a index to word dictionary.</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># This is only to &quot;load&quot; the dictionary.</span>
+<span class="n">id2word</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">id2token</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="o">=</span><span class="n">corpus</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">id2word</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="n">chunksize</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+    <span class="n">iterations</span><span class="o">=</span><span class="n">iterations</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span><span class="p">,</span>
+    <span class="n">passes</span><span class="o">=</span><span class="n">passes</span><span class="p">,</span> <span class="n">eval_every</span><span class="o">=</span><span class="n">eval_every</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h3>Interpreting the model</h3>
+<p>Using <code>model.show_topics()</code> we can see which tokens are used to determine the topics (note that the topics are identified by integers).</p>
+<figure>
+<img src="files/model_topics.png" width=90%>
+<figcaption>model topics.</figcaption>
+</figure>
+
+<h3>Scoring the model</h3>
+<p>A LDA model performance is typically measured based on its <a href="https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0">Coherence Score</a>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">coherence_model_lda</span> <span class="o">=</span> <span class="n">CoherenceModel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">texts</span><span class="o">=</span><span class="n">docs</span><span class="p">,</span> <span class="n">dictionary</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span><span class="n">coherence</span><span class="o">=</span><span class="s1">&#39;c_v&#39;</span><span class="p">)</span>
+<span class="n">coherence_lda</span> <span class="o">=</span> <span class="n">coherence_model_lda</span><span class="o">.</span><span class="n">get_coherence</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coherence Score: &#39;</span><span class="p">,</span> <span class="n">coherence_lda</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>The above model has a score of </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Coherence</span> <span class="n">Score</span><span class="p">:</span>  <span class="mf">0.34826254816755037</span>
+</code></pre></div>
+</td></tr></table>
+<p>but what does it mean? For this dataset we have topic already specified in column <code>category</code>.  Lets compare our generated topics against these.  First we need to set the topic for each document (claim) in our dataset. To do this I use the following function which select to mst likely topic for a given document</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_topic</span><span class="p">(</span><span class="n">doc</span><span class="p">):</span>
+    <span class="n">bow</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>               <span class="c1"># convert tokens to bow</span>
+    <span class="n">topics</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_document_topics</span><span class="p">(</span><span class="n">bow</span><span class="p">)</span>     <span class="c1"># get topic,prob based on bow</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">topics</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># pick topic with highest probability</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;topic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ngrams&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_topic</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>Now a <code>crosstab</code> of given topic label <code>category</code> and predicted topic number <code>topic</code> should give us a nice clean table with only one non-zeros value in each row and in each column (i.e. a permutation of a diagonal matrix) ...</p>
+<p>NOTE: When generating the steps for the practical I see now that I left in the 169 claims with missing <code>category</code>. Don't have time to fix this. So ignore this row. Sorry.</p>
+<figure>
+<img src="files/crosstab.png" width=90%>
+<figcaption>Crosstab of given topic label `category` and predicted topic number `topic`.</figcaption>
+</figure>
+
+<p>Well ... this is disappointing ... it seems that the topic modeling was throwing everything into topic 8. Can we do better? In the words of Obama, "Yes We Can". </p>
+<p>This is easily improved by:</p>
+<ul>
+<li>My cleaning/tokenizing was basic and have left punctuation stuck to various tokens.  This should be cleaned.</li>
+<li>Trump rambles (a bit like my practicals) and if left to talk long enough will flip between topics.  We could help (and speed up training) but limiting the number of </li>
+</ul>
+<h3>Choosing the Number of Topics &mdash; Don't do</h3>
+<p>Since LDA does not determine the number of topics we could follow our standard procedure and 
+perform a parameter sweep and select the number of topics that maxamised coherence score. We won't do this here since it will take too long (30 min) and we know that the number of topics should be 18.</p>
+<h3>Visualising Topics</h3>
+<p>There is an excellent library for interactively visualising output from a LDA.</p>
+<p>Import using </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pyLDAvis</span>
+<span class="kn">import</span> <span class="nn">pyLDAvis.gensim_models</span> <span class="k">as</span> <span class="nn">gensimvis</span>
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="p">(</span><span class="ne">FutureWarning</span><span class="p">,</span><span class="ne">DeprecationWarning</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>and create/open visualisation using </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">lda_viz</span> <span class="o">=</span> <span class="n">gensimvis</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
+<span class="n">lda_viz</span>
+</code></pre></div>
+</td></tr></table>
+<p>For time reasons I won't cover this, but see resources at the start of this practical.</p>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Preprocessing.html">&larr; Previous (Preprocessing)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Temporal_View.html">Next (Temporal View) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

@@ -164,6 +164,10 @@
 											<a href="03-Model.html">Model</a>
 										</li>
 										
+										<li >
+											<a href="04-Dashboard.html">Dashboard</a>
+										</li>
+										
 									</ul>
 								</li>
 							</ul>
@@ -194,11 +198,11 @@
 <ul>
 <li>Patient Discharge dataset<ul>
 <li>Individual records per patent, detailing <ul>
-<li>Patient personal data -- gender, age, etc</li>
+<li>Patient personal data &mdash; gender, age, etc. </li>
 <li>Reason for admission to hospital</li>
-<li>Treatment details -- take care of this as some </li>
-<li>Billing information -- we will </li>
-<li>and <code>LENGTH_OF_STAY</code></li>
+<li>Treatment details &mdash; take care of this as some of this is not knowable on day of admission.</li>
+<li>Billing information &mdash; we will ignore this.</li>
+<li>and <code>LENGTH_OF_STAY</code>  &mdash; our target</li>
 </ul>
 </li>
 <li>Individual records are broken into two file <code>base1</code> and `base2' <ul>
@@ -218,12 +222,12 @@
 </ul>
 </li>
 <li>Comments<ul>
-<li>For dataset for each quarter is accompanied by a comments document, aggregating the comments from each medical provider.  I have not linked to these documents --- have a look on the website if you wish -- as, I think, the detail in the User Manual is sufficient for your needs.</li>
+<li>For dataset for each quarter is accompanied by a comments document, aggregating the comments from each medical provider.  I have not linked to these documents &mdash; have a look on the website if you wish &mdash; because, I think, the detail in the User Manual is sufficient for your needs.</li>
 </ul>
 </li>
 </ul>
 <h2>Importing</h2>
-<p>The notebook <a href="files/01-Import.ipynb">01-Import.ipynb</a> will create the usual subfolders and will download data/document if local copy is not found.  Note that when I load in the dataset I treat all columns as <code>str</code>. You could remove this option but I prefer to data as <code>str</code> and convert to <code>int</code> after replacing NA or to `float' on a column by column basis.  </p>
+<p>The notebook <a href="files/01-Import.ipynb">01-Import.ipynb</a> will create the usual sub-folders and will download data/documents if local copy is not found.  Note that when I load in the dataset I treat all columns as <code>str</code>. You could remove this option but I prefer to data as <code>str</code> and convert to <code>int</code> after replacing NA or to `float' on a column by column basis.  </p>
 <h2>The target</h2>
 <p>The <code>LENGTH_OF_STAY</code> stores the number of days a inpatient was in hospital. It is very skewed for example look at the 5-number summary</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">LENGTH_OF_STAY</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -249,16 +253,16 @@ max        1961.000000
 Name: LENGTH_OF_STAY, dtype: float64
 </code></pre></div>
 </td></tr></table>
-<p>Rather than trying to predict (a regression problem) we classify patents into three (roughly equal sized) class.  Create our required target column, <code>TARGET</code> based on <code>LENGTH_OF_STAY</code></p>
+<p>Rather than trying to predict (a regression problem) we will classify patents into three (roughly equal sized) class.  Create our required target column, <code>TARGET</code> based on <code>LENGTH_OF_STAY</code></p>
 <ul>
 <li><code>short</code> = <code>LENGTH_OF_STAY&lt;3</code> (~40% of cases)</li>
 <li><code>medium</code> = <code>LENGTH_OF_STAY&gt;=3 and LENGTH_OF_STAY&lt;=6</code> (~30% of cases)</li>
 <li><code>long</code> = <code>LENGTH_OF_STAY&gt;6</code> (~20% of cases)</li>
 </ul>
 <h2>Filtering Columns</h2>
-<p>Our aim is to use only the information known on day 1 to predict length of stay.  So obviously you cannot use any columns which are populated after day 1. The billing column is one such column, but there are many others.  In terms of error effect, it is worse to include an invalid column than it is to include a valid column --- so PSA is "If in doubt leave it out". </p>
+<p>Our aim is to use only the information known on day 1 to predict length of stay.  So obviously you cannot use any columns which are populated after day 1. The billing column is one such column, but there are many others.  In terms of error vs effect, it is worse to include an invalid column than it is to include a valid column --- so PSA is "If in doubt leave it out". </p>
 <h2>Filtering Rows</h2>
-<p>Many rows have missing values and also have data makeed as invalid. Your options here are to filter out or the fix/encode in some way --- I would suggest you do this on a column by column basis.  Make sure to apply same steps to the grading dataset.</p>
+<p>Many rows have missing values and also have data marked as invalid. Your options here are to filter out or the fix/encode in some way --- I would suggest you do this on a column by column basis.  Make sure to apply same steps to the grading dataset.</p>
 		
 		<ul class="pager">
 			

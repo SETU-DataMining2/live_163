@@ -212,8 +212,10 @@
 <li>Deal with practical consequences of a large, uncleaned dataset.</li>
 <li>Make rational decisions regarding filtering/correcting cases with invalid data.</li>
 <li>Implement model and generate results matching specification.</li>
+<li>Deploy model with a simple UI.</li>
+<li>Explain model predictions.</li>
 </ul>
-<h2>Outline / Submission</h2>
+<h2>Steps</h2>
 <p>The other pages will cover some of these steps in more detail but, at a high level, the project consists of the following steps:</p>
 <ol>
 <li>Create a folder for this project. </li>
@@ -230,13 +232,13 @@
 <li>Remove variables that cannot be used when predicting <code>LENGTH_OF_STAY</code> based on what is known at day patient is admitted to hospital. </li>
 <li>Consider splitting off some smaller subset to cut down on computational effort during EDA/development.</li>
 <li>If you are going to use Facility Type dataset, import the TAB files and save them to <code>data</code> using correct extension "tsv" or better use comma separator and save them as CSV (or better pickle). Using this dataset is optional.</li>
-<li>Save all processed dataset into subfolder <code>data</code>.</li>
+<li>Save all processed dataset into sub-folder <code>data</code>.</li>
 </ol>
 </li>
 </ol>
 </li>
 <li>Create notebook to perform EDA, called <code>02-EDA.ipynb</code>.<ol>
-<li>Not all variables in the dataset can be used. You will need to use the accompanying datasheet (which should have been downloaded to <code>doc</code> folder) to determine which variables are known on day of admission. </li>
+<li><strong>Not all variables in the dataset can be used.</strong> You will need to use the accompanying data sheet (which should have been downloaded to <code>doc</code> folder) to determine which variables are known on day of admission. </li>
 </ol>
 </li>
 <li>Create notebook to perform Model training and evaluation, and scoring, called <code>03-Model.ipynb</code>.<ol>
@@ -248,50 +250,24 @@
 <li>Save predictions for test dataset to <code>df_grading_pred.csv</code></li>
 </ul>
 </li>
+<li>Build dashboard using streamlit<ul>
+<li>Use script <code>dashboard.py</code></li>
+<li>Enter a patient's details and generate prediction.</li>
+<li>Explain prediction.</li>
+</ul>
+</li>
 <li>Create archive for upload to Moodle <ul>
-<li>Archive only should contain files that you created.  Data files are not needed.  Build archive using code given in online session (same as shown below).</li>
+<li>Archive only should contain files that you created.  Data files are not needed.  Build archive using function <code>my_lib.make_assignment</code>.</li>
 </ul>
 </li>
 </ol>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
-<span class="kn">import</span> <span class="nn">os</span>
-
-<span class="k">def</span> <span class="nf">make_assignment</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">[],</span> <span class="n">archive</span><span class="o">=</span><span class="s2">&quot;my_assignment.zip&quot;</span><span class="p">):</span>
-
-    <span class="n">default_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;01-Import.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;02-EDA.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;03-Model.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;my_lib.py&quot;</span><span class="p">,</span> <span class="s2">&quot;df_grading_pred.csv&quot;</span><span class="p">]</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating archive: </span><span class="si">{</span><span class="n">archive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">archive</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">zip</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="o">+</span><span class="n">default_files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> - OK&quot;</span><span class="p">)</span>
-                <span class="nb">zip</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> - Skipped&quot;</span><span class="p">)</span>
-
-<span class="c1"># TODO --- insert any extra files that you created.             </span>
-<span class="n">make_assignment</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">[])</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">my_lib</span>
+<span class="n">my_lib</span><span class="o">.</span><span class="n">make_assignment</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
 <div class="pager">
-<a class="btn btn-primary btn-lg" target="_blank" href="https://moodle.wit.ie/mod/MOODLE_ACTIVITY_TYPE/view.php?id=MOODLE_ACTIVITY_ID" role="button">MOODLE_ACTIVITY_TEXT</a>
+<a class="btn btn-primary btn-lg" target="_blank" href="https://moodle.wit.ie/mod/assign/view.php?id=000000" role="button">Submit using Moodle</a>
 </div>
 
 <h2>Grading Rubric</h2>
@@ -319,9 +295,16 @@
 <li><strong>GOOD</strong> </br></br></li>
 </ul>
 </li>
-<li>(50%) Model score (on public and private test sets)<ul>
-<li>0% Does not generate appropraite test_pred.csv file in current folder</li>
-<li><strong>SCORE</strong> Based on accuracy </li>
+<li>(35%) Model score (on public and private test sets)<ul>
+<li>0% Does not generate appropriate test_pred.csv file in current folder</li>
+<li><strong>SCORE</strong> Based on accuracy</br></br></li>
+</ul>
+</li>
+<li>(15%) Dashboard<ul>
+<li>0% Not done</li>
+<li><strong>OK</strong> Can enter patient details and generate prediction.</li>
+<li><strong>GOOD</strong> Explains prediction.
+</br></br></li>
 </ul>
 </li>
 </ul>
@@ -331,6 +314,7 @@
 <li><a href="01-Input.html">Input of data</a></li>
 <li><a href="02-EDA.html">EDA</a></li>
 <li><a href="03-Model.html">Model training, evaluation and scoring</a></li>
+<li><a href="04-Dashbord.html">Dashboard</a></li>
 </ul>
 		
 		<ul class="pager">

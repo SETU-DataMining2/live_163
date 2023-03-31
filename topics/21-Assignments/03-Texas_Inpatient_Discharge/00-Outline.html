@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Data Mining 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=192024" target="_blank"><img height="18pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Introduction/index.html">Module Introduction</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/02-Feature_Engineering/index.html">Feature Engineering</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/03-Review_of_Model_Building/index.html">Review of Model Building</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/04-Hyperparameter_Tuning/index.html">Hyperparameter Tuning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/05-Ensemble_Learning/index.html">Ensemble Learning</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/06-Time_Series_Mining/index.html">Time Series Mining</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/07-Text_Mining/index.html">Text Mining</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/21-Assignments/index.html">Assignments</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html#01-NASA_Software_Defect_Datasets">NASA Software Defect Datasets</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html#02-Kaggle_Competition">Kaggle Competition</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/21-Assignments/index.html#03-Texas_Inpatient_Discharge">Texas Inpatient Discharge</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Outline</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li class="active">
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Input.html">Input</a>
+										</li>
+										
+										<li >
+											<a href="02-EDA.html">EDA</a>
+										</li>
+										
+										<li >
+											<a href="03-Model.html">Model</a>
+										</li>
+										
+										<li >
+											<a href="04-Dashboard.html">Dashboard</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next"><a href="01-Input.html">Next (Input) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Texas Inpatient Discharge</h1>
+<h2>Summary</h2>
+<p>In order to help people deal with the cost of hospitalisation (USA data) you are hired by a patients right group to build a model to predict how long a patient will stay in hospital <strong>based on information available/obtained on the day of admission</strong>. </p>
+<p>This assignment will consist of:</p>
+<ul>
+<li>Data preparation &mdash; selecting the allowable data fields from the given dataset and accompanying data sheet.</li>
+<li>Building a classification model to predict whether a patient's stay will be <code>short</code> (&lt;3 days), <code>medium</code> (3 ... 6 days), or <code>long</code> (&gt; days).</li>
+<li>Generating predictions to evaluate model.</li>
+<li>Building a simple UI (using <a href="https://streamlit.io">streamlit</a>) to allow public to enter their particulars and see why the model has made its prediction.</li>
+</ul>
+<h2>Background</h2>
+<p>We want to predict how long an individual will be in hospital <strong>based on information available/obtained on the day of admission</strong>. This has obvious cost implications for the patient (this is USA data) and planning implications for the hospital.  </p>
+<p>We will use a subset of the <a href="https://www.dshs.texas.gov/THCIC/Hospitals/Download.shtm">Texas Hospital Discharge Data Public Use Data File</a>. Access to the more recent years is restricted but prior to 2014 the data is freely available. The dataset is interesting (and sometimes depressing) view of the impact of hospitalisation.  Much of the dataset deals with billing which we won't need for our problem. </p>
+<p>I have taken a subset (1,000,000 cases) of the 2013 records to train our model and a further subset of (100,000 cases) that will act as public test set to grade your model.  I also have a separate hidden subset (of 100,000 cases) that I will use to independently verify your model.</p>
+<p>In terms of grading, I'm interested in see how well you accomplish the following:</p>
+<ul>
+<li>Parse a technical description of a dataset to make correct conclusions on which features can be used.</li>
+<li>Deal with practical consequences of a large, uncleaned dataset.</li>
+<li>Make rational decisions regarding filtering/correcting cases with invalid data.</li>
+<li>Implement model and generate results matching specification.</li>
+</ul>
+<h2>Outline / Submission</h2>
+<p>The other pages will cover some of these steps in more detail but, at a high level, the project consists of the following steps:</p>
+<ol>
+<li>Create a folder for this project. </li>
+<li>Download my notebook <a href="files/01-Import.ipynb">01-Import.ipynb</a>, which does the usual subtasks of<ol>
+<li>Create the standard sub-folders - DONE</li>
+<li>Download the required data (into <code>orig</code> sub-folder) and documentation (into <code>doc</code> sub-folder) if local copy is not found - DONE</li>
+<li>Load and perform initial cleaning+preparation of the dataset - NOT DONE<ol>
+<li>Create our required target column, <code>TARGET</code> based on <code>LENGTH_OF_STAY</code><ul>
+<li><code>short</code> = <code>LENGTH_OF_STAY&lt;3</code></li>
+<li><code>medium</code> = <code>LENGTH_OF_STAY&gt;=3 and LENGTH_OF_STAY&lt;=6</code></li>
+<li><code>long</code> = <code>LENGTH_OF_STAY&gt;6</code></li>
+</ul>
+</li>
+<li>Remove variables that cannot be used when predicting <code>LENGTH_OF_STAY</code> based on what is known at day patient is admitted to hospital. </li>
+<li>Consider splitting off some smaller subset to cut down on computational effort during EDA/development.</li>
+<li>If you are going to use Facility Type dataset, import the TAB files and save them to <code>data</code> using correct extension "tsv" or better use comma separator and save them as CSV (or better pickle). Using this dataset is optional.</li>
+<li>Save all processed dataset into subfolder <code>data</code>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Create notebook to perform EDA, called <code>02-EDA.ipynb</code>.<ol>
+<li>Not all variables in the dataset can be used. You will need to use the accompanying datasheet (which should have been downloaded to <code>doc</code> folder) to determine which variables are known on day of admission. </li>
+</ol>
+</li>
+<li>Create notebook to perform Model training and evaluation, and scoring, called <code>03-Model.ipynb</code>.<ol>
+<li>Implement and optimise your classification model.</li>
+<li>Generates <code>grading_pred.csv</code> based on <code>data/grading.csv</code> from <code>src/grading.csv.gz</code> using your <code>01-Input.ipynb</code>. </li>
+</ol>
+</li>
+<li>Apply your model to the test dataset<ul>
+<li>Save predictions for test dataset to <code>df_grading_pred.csv</code></li>
+</ul>
+</li>
+<li>Create archive for upload to Moodle <ul>
+<li>Archive only should contain files that you created.  Data files are not needed.  Build archive using code given in online session (same as shown below).</li>
+</ul>
+</li>
+</ol>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">zipfile</span> <span class="kn">import</span> <span class="n">ZipFile</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">make_assignment</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">[],</span> <span class="n">archive</span><span class="o">=</span><span class="s2">&quot;my_assignment.zip&quot;</span><span class="p">):</span>
+
+    <span class="n">default_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;01-Import.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;02-EDA.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;03-Model.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;my_lib.py&quot;</span><span class="p">,</span> <span class="s2">&quot;df_grading_pred.csv&quot;</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating archive: </span><span class="si">{</span><span class="n">archive</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">archive</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="nb">zip</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="o">+</span><span class="n">default_files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> - OK&quot;</span><span class="p">)</span>
+                <span class="nb">zip</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> 
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2"> - Skipped&quot;</span><span class="p">)</span>
+
+<span class="c1"># TODO --- insert any extra files that you created.             </span>
+<span class="n">make_assignment</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="p">[])</span>
+</code></pre></div>
+</td></tr></table>
+<div class="pager">
+<a class="btn btn-primary btn-lg" target="_blank" href="https://moodle.wit.ie/mod/MOODLE_ACTIVITY_TYPE/view.php?id=MOODLE_ACTIVITY_ID" role="button">MOODLE_ACTIVITY_TEXT</a>
+</div>
+
+<h2>Grading Rubric</h2>
+<p>I will need to review this later, but initial breakdown is:</p>
+<ul>
+<li>
+<p>(10%) 01-Input</p>
+<ul>
+<li>0% Does not execute without errors </li>
+<li><strong>OK</strong> Execute correctly and appropriate columns have been removed, on both test and train datasets</li>
+<li><strong>GOOD</strong> In addition, appropriate updating/filtering of rows based on EDA analysis.</br></br></li>
+</ul>
+</li>
+<li>
+<p>(20%) 02-EDA</p>
+<ul>
+<li>0% Does not execute without errors </li>
+<li><strong>OK</strong> Execute correctly and demonstrates main properties of the data.</li>
+<li><strong>GOOD</strong> Clear indication of which features are important and why.</br></br></li>
+</ul>
+</li>
+<li>(20%) 03-Model<ul>
+<li>0% Does not execute without errors </li>
+<li><strong>OK</strong> Appropriate classification model selected and optimised</li>
+<li><strong>GOOD</strong> </br></br></li>
+</ul>
+</li>
+<li>(50%) Model score (on public and private test sets)<ul>
+<li>0% Does not generate appropraite test_pred.csv file in current folder</li>
+<li><strong>SCORE</strong> Based on accuracy </li>
+</ul>
+</li>
+</ul>
+<h2>More Detail</h2>
+<p>I will update the following pages based on your questions</p>
+<ul>
+<li><a href="01-Input.html">Input of data</a></li>
+<li><a href="02-EDA.html">EDA</a></li>
+<li><a href="03-Model.html">Model training, evaluation and scoring</a></li>
+</ul>
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next"><a href="01-Input.html">Next (Input) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
